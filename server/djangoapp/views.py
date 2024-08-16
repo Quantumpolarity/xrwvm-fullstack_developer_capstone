@@ -122,7 +122,8 @@ def get_dealer_details(request, dealer_id):
         return JsonResponse({"status": 400, "message": "Bad Request"})
 
 # Create a `add_review` view to submit a review
-def  add_review(request):
+def add_review(request):
+    
     if (request.user.is_anonymous == False):
         data = json.loads(request.body)
         try:
