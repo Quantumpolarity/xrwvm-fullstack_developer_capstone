@@ -65,7 +65,8 @@ def registration(request):
         username_exist = True
     except Exception as e:    
     # Log that this is a new user
-        logger.debug(f"{username} is a new user")
+        logger.debug(f"{username} is a new user,
+        but an exception occurred: {e}")
 
     # If it is a new user
     if not username_exist:
@@ -85,7 +86,7 @@ def registration(request):
 
 
 # get the list of cars
-def get_cars (request):
+def get_cars(request):
     count = CarMake.objects.filter().count()
     print(count)
     if (count == 0):
@@ -98,7 +99,7 @@ def get_cars (request):
     return JsonResponse({"CarModels": cars})
 
 
-# Update the get_dealerships render list of dealerships all by default, 
+# Update the get_dealerships render list of dealerships all by default,
 # Particular state if state is passed
 def get_dealerships(request, state="All"):
     if (state == "All"):
@@ -140,7 +141,7 @@ def add_review(request):
         data = json.loads(request.body)
         try:
             response = post_review(data)
-            return JsonResponse({"status": 200})
+            return JsonResponse({"status": 200, "response: response})
         except Exception as e:
             logger.error(f"Error in posting review: {str(e)}")
     else:
