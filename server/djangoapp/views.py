@@ -61,7 +61,7 @@ def registration(request):
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
-    except Exception as e:    
+    except Exception as e: 
     # Log that this is a new user
         logger.debug(
             f"{username} is a new user, but an exception occurred: {e}"
@@ -72,7 +72,6 @@ def registration(request):
         email_exist = True
     except User.DoesNotExist:
         pass
-        
     # If it is a new user
     if not username_exist and not email_exist:
         # Create user in auth_user table
