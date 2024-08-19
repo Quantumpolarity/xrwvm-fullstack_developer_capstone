@@ -20,7 +20,8 @@ def get_request(endpoint, **kwargs):
     
     try:
         response = requests.get(request_url)
-        response.raise_for_status()  # Raise an exception for HTTP error responses
+        response.raise_for_status()  
+        # Raise an exception for HTTP error responses
         return response.json()
     except requests.exceptions.RequestException as e:
         print(f"Network exception occurred: {e}")
@@ -38,13 +39,12 @@ def analyze_review_sentiments(text):
         print("Network exception occurred")
 
 
-import requests
-
 def post_review(data_dict):
     request_url = f"{backend_url}/insert_review"
     try:
         response = requests.post(request_url, json=data_dict)
-        response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
+        response.raise_for_status()
+        # Raise an HTTPError for bad responses (4xx and 5xx)
         response_data = response.json()
         print(response_data)
         return response_data
