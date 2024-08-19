@@ -19,7 +19,7 @@ def get_request(endpoint, **kwargs):
     print(f"GET from {request_url}")
     try:
         response = requests.get(request_url)
-        response.raise_for_status()  
+        response.raise_for_status()
         # Raise an exception for HTTP error responses
         return response.json()
     except requests.exceptions.RequestException as e:
@@ -50,4 +50,3 @@ def post_review(data_dict):
     except requests.exceptions.RequestException as e:
         print(f"Network exception occurred: {e}")
         return None
-        
