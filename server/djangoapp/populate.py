@@ -24,7 +24,7 @@ car_make_instances.append(car_make_instance)
 
 
     # Create CarModel instances with the corresponding CarMake instances
-    car_model_data = [
+car_model_data = [
       {"name": "Pathfinder",
        "type": "SUV", "year": 2023,
        "car_make": car_make_instances[0]},
