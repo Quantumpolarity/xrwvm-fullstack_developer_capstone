@@ -67,7 +67,6 @@ def registration(request):
     # Log that this is a new user
     logger.debug(f"{username} is a new user")
 
-
     # If it is a new user
     if not username_exist:
         # Create user in auth_user table
