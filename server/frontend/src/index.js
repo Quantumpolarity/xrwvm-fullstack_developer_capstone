@@ -1,4 +1,4 @@
-/*jshint esversion: 8 */
+/* jshint esversion: 8 */
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -7,8 +7,11 @@ import App from './App';
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+/* jshint ignore:start */
 root.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
 );
+/* jshint ignore:end */
